@@ -1,0 +1,12 @@
+.env
+.env.example
+.gitignore
+*.md
+*.zip
+*.tests
+*.log
+bin/
+log/
+logs/
+
+docker-compose.yml

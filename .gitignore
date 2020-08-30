@@ -1,0 +1,32 @@
+#
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+*.test
+*.out
+
+# Environments
+*.env
+*.env.test
+*.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+*.zip
+bin/
+log/
+logs/
+*.log
+./.vscode
+
+template_engine
+routes.txt
+
+# Ignore all folders taht start with a dot
+.*/

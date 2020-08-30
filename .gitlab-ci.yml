@@ -1,0 +1,28 @@
+
+
+stages:
+  - Test code
+  - BuildSelect image
+  - Push to Gitlab repo
+
+test:
+  image: golang:alpine
+  stage: Test code
+  script:
+  - echo "test is ok"
+
+# docker build:
+#   image: docker:stable
+#   stage: BuildSelect image
+#   script:
+#   - docker info
+#   - docker build -t registry.gitlab.com/aikone_fashion/goggers .
+
+# docker push:
+#   image: docker:stable
+#   stage: Push to Gitlab repo
+#   only:
+#   - master
+#   script:
+#   - echo "$REGISTRY_PASSWORD" | docker login registry.gitlab.com -u "$REGISTRY_USER" --password-stdin
+#   - docker push registry.gitlab.com/aikone_fashion/goggers
