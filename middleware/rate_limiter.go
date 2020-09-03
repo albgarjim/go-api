@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	out "goggers/api/v1/output"
+	out "go-api/api/v1/output"
 
 	log "github.com/sirupsen/logrus"
 

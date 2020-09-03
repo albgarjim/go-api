@@ -4,9 +4,9 @@ import (
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
-	rdb "goggers/api/v1/models/rethinkdb"
+	rdb "go-api/api/v1/models/rethinkdb"
 
-	mdw "goggers/middleware"
+	mdw "go-api/middleware"
 )
 
 /*

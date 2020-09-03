@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	out "goggers/api/v1/output"
+	out "go-api/api/v1/output"
 	"net/http"
 	"os"
 

@@ -4,16 +4,16 @@ import (
 	"encoding/json"
 	"net/http"
 
-	inp "goggers/api/v1/input"
-	out "goggers/api/v1/output"
+	inp "go-api/api/v1/input"
+	out "go-api/api/v1/output"
 
-	rdb "goggers/api/v1/models/rethinkdb"
+	rdb "go-api/api/v1/models/rethinkdb"
 
 	log "github.com/sirupsen/logrus"
 )
 
 func GetItem(_w http.ResponseWriter, _r *http.Request) {
-	log.Info("-------- Call GetSingleItem route --------")
+	log.Info("-------- Call GetItem route --------")
 	var err error
 	var params *inp.URLParams
 
@@ -37,12 +37,12 @@ func GetItem(_w http.ResponseWriter, _r *http.Request) {
 		return
 	}
 
-	log.Info("-------- Finish GetSingleItem route --------")
+	log.Info("-------- Finish GetItem route --------")
 	out.RespondWithJSON(_w, http.StatusOK, items)
 }
 
 func UpdateItem(_w http.ResponseWriter, _r *http.Request) {
-	log.Info("-------- Call to RevertDislikedItem route --------")
+	log.Info("-------- Call to UpdateItem route --------")
 	var err error
 	var params *inp.URLParams
 	var u inp.ItemData
@@ -60,17 +60,17 @@ func UpdateItem(_w http.ResponseWriter, _r *http.Request) {
 	}
 
 	if err = rdb.ItemUpdateDB(params, u); err != nil {
-		log.Error("Error reverting update items on database: ", err)
+		log.Error("Error updating items on database: ", err)
 		out.RespondWithError(_w, out.ErrInternalServer)
 		return
 	}
 
-	log.Info("-------- Finish RevertDislikedItem route --------")
+	log.Info("-------- Finish UpdateItem route --------")
 	out.RespondWithJSON(_w, http.StatusCreated, out.SuccessResource)
 }
 
 func DeleteItem(_w http.ResponseWriter, _r *http.Request) {
-	log.Info("-------- Call to DislikeItem route --------")
+	log.Info("-------- Call to DeleteItem route --------")
 	var err error
 	var params *inp.URLParams
 
@@ -81,17 +81,17 @@ func DeleteItem(_w http.ResponseWriter, _r *http.Request) {
 	}
 
 	if err = rdb.ItemDeleteDB(params); err != nil {
-		log.Error("Error disliking items on database: ", err)
+		log.Error("Error deleting items on database: ", err)
 		out.RespondWithError(_w, out.ErrInternalServer)
 		return
 	}
 
-	log.Info("-------- Finish DislikeItem route --------")
+	log.Info("-------- Finish DeleteItem route --------")
 	out.RespondWithJSON(_w, http.StatusCreated, out.SuccessResource)
 }
 
 func InsertItem(_w http.ResponseWriter, _r *http.Request) {
-	log.Info("-------- Call to RevertDislikedItem route --------")
+	log.Info("-------- Call to InsertItem route --------")
 	var err error
 	var u inp.ItemData
 
@@ -102,11 +102,11 @@ func InsertItem(_w http.ResponseWriter, _r *http.Request) {
 	}
 
 	if err = rdb.ItemInsertDB(u); err != nil {
-		log.Error("Error reverting disliked items on database: ", err)
+		log.Error("Error inserting items on database: ", err)
 		out.RespondWithError(_w, out.ErrInternalServer)
 		return
 	}
 
-	log.Info("-------- Finish RevertDislikedItem route --------")
+	log.Info("-------- Finish InsertItem route --------")
 	out.RespondWithJSON(_w, http.StatusCreated, out.SuccessResource)
 }

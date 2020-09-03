@@ -1,8 +1,8 @@
 package main
 
 import (
-	cor "goggers/core"
-	utl "goggers/utils"
+	cor "go-api/core"
+	utl "go-api/utils"
 
 	"os"
 )

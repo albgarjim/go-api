@@ -1,7 +1,7 @@
 package core
 
 import (
-	. "goggers/api/v1/handlers"
+	. "go-api/api/v1/handlers"
 
 	log "github.com/sirupsen/logrus"
 

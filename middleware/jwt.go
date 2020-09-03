@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	out "goggers/api/v1/output"
+	out "go-api/api/v1/output"
 
 	jwt "github.com/dgrijalva/jwt-go"
 	log "github.com/sirupsen/logrus"
