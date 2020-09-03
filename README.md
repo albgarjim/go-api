@@ -9,6 +9,7 @@
 [golang-install]: https://golang.org/doc/install
 [vscode-go]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go
 [vscode-prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+[alberto-mail]: albgarjim1@gmail.com
 
 
 RESTful API written in Golang using RethinkDB as database
